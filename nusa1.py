@@ -3,7 +3,7 @@ import requests
 from configparser import ConfigParser
 import smtplib
 from email.mime.text import MIMEText
-from twilio.rest import Client
+# from twilio.rest import Client
 import RPi.GPIO as GPIO
 from datetime import datetime, timedelta
 import time
@@ -24,9 +24,9 @@ GPIO.setup(shock_pin, GPIO.IN)
 GPIO.setup(motion_pin, GPIO.IN)
 
 # define sms
-account_sid = "ACd3629a5ddec39f71bb9754cd11e3cb8c"
-auth_token = "ded2e1b7129859a4eb65ed4d37e09656"
-client = Client(account_sid, auth_token)
+# account_sid = "ACd3629a5ddec39f71bb9754cd11e3cb8c"
+# auth_token = "ded2e1b7129859a4eb65ed4d37e09656"
+# client = Client(account_sid, auth_token)
 
 # ini file crawling
 urlstr = "http://nero666.dothome.co.kr/" + str(serial) + '.ini'
@@ -69,7 +69,7 @@ def send_mail_(str):
         smtp.sendmail(email, "jsj2505@naver.com", msg.as_string())
         smtp.quit()
         print("메일을 전송했습니다.")
-
+"""
 def send_sms_(str):
     s = str
     global phone
@@ -92,6 +92,7 @@ def send_sms_(str):
                 to = phone
             )
     print("메세지를 보냈습니다")
+"""
 
 """sensor shock"""
 def shock():
