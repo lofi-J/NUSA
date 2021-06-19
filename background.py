@@ -13,13 +13,7 @@ data.encoding = 'utf-8'
 with open(str(serial) + ".ini", 'w', encoding='utf-8') as f:
     f.write(str(data.text))
 
-
-"""
-git remote add origin https://github.com/thinkpad-J/NUSA.git
-git branch -M main
-git push -u origin main
-"""
-
+    
 parser = ConfigParser()
 parser.read("111111.ini")
 
